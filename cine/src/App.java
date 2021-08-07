@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Bienvenidos al cine");
@@ -6,8 +8,14 @@ public class App {
 
         Cliente clienteUno = new Cliente();
 
-        clienteUno.setCedula("23652900");
-        clienteUno.setNombre("Maria Caro ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingrese su cédula:");
+        String cedula = scan.nextLine();
+        System.out.println("Ingrese su nombre:");
+        String nombre = scan.nextLine();
+        
+        clienteUno.setCedula(cedula);
+        clienteUno.setNombre(nombre);
         clienteUno.setId(1); 
         float precioUno = clienteUno.calcularPrecio(8000);
         System.out.println("Cédula: " + clienteUno.getCedula() 
@@ -16,6 +24,9 @@ public class App {
                             + "\nPrecio entrada: " + precioUno);
 
         clienteUno.mostrarDatos();
+        clienteUno.saludar();
+        clienteUno.saludar("Buenas noches");
+
 
         //Cliente Dos
 
@@ -32,7 +43,11 @@ public class App {
                             + "\nNombre: " + clienteDos.getNombre()
                             + "\nID: " + clienteDos.getNumeroTarjeta()
                             + "\nPrecio entrada: " + precioDos);
+
         clienteDos.mostrarDatos();                    
+
+        clienteDos.saludar();
+        clienteDos.saludar("Buenos dias, con toda! Duro que con Disciplina y Esfuerzo (trabajo Duro e Inteligente) todo se puede!!");
 
     }
 }
