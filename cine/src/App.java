@@ -13,6 +13,7 @@ public class App {
         String cedula = scan.nextLine();
         System.out.println("Ingrese su nombre:");
         String nombre = scan.nextLine();
+        scan.close();
         
         clienteUno.setCedula(cedula);
         clienteUno.setNombre(nombre);
@@ -47,7 +48,7 @@ public class App {
         clienteDos.mostrarDatos();                    
 
         clienteDos.saludar();
-        clienteDos.saludar("Buenos dias, con toda! Duro que con Disciplina y Esfuerzo (trabajo Duro e Inteligente) todo se puede!!");
+        clienteDos.saludar("Buenos dias, con toda! Duro que con Disciplina y Esfuerzo (Trabajo Duro e Inteligente) TODO SE PUEDE!!");
 
     }
 }
