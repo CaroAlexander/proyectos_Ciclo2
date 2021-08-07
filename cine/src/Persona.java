@@ -20,4 +20,11 @@ public class Persona {
         return this.nombre;
     }
 
+
+    public void mostrarDatos() {
+        System.out.println("Cedula = " + this.cedula + " Nombre = " + this.nombre);
+    }
+
+
+
 }

@@ -15,6 +15,7 @@ public class App {
                             + "\nID: " + clienteUno.getId()
                             + "\nPrecio entrada: " + precioUno);
 
+        clienteUno.mostrarDatos();
 
         //Cliente Dos
 
@@ -31,5 +32,7 @@ public class App {
                             + "\nNombre: " + clienteDos.getNombre()
                             + "\nID: " + clienteDos.getNumeroTarjeta()
                             + "\nPrecio entrada: " + precioDos);
+        clienteDos.mostrarDatos();                    
+
     }
 }
