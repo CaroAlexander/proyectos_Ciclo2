@@ -4,8 +4,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Bienvenidos al cine");
 
-         //Cliente Uno
-
+        //Cliente Uno
+/*
         Cliente clienteUno = new Cliente();
 
         Scanner scan = new Scanner(System.in);
@@ -50,14 +50,15 @@ public class App {
         // clienteDos.saludar();
         //clienteDos.saludar("Buenos dias, con toda! Duro que con Disciplina y Esfuerzo (Trabajo Duro e Inteligente) TODO SE PUEDE!!");
 
-        // Pruebas Contenedores
+        // Pruebas Contenedores */
 
         Prueba pruebaContenedor = new Prueba ();
-        // pruebaContenedor.generarLista();
+        pruebaContenedor.generarLista();
     
 
         // Listas de objetos
 
+        /*
         String opcion = "S";
 
         System.out.println("");
@@ -86,6 +87,8 @@ public class App {
         
         //pruebaContenedor.mostrarNombreClientes();
         pruebaContenedor.mostrarDatosClientes();
+        */
+
     }
 
 }
