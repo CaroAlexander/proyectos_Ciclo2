@@ -27,7 +27,8 @@ public class Prueba {
             // Ciclo for 
     
             for (int i = 0; i < listaNumero.size(); i++) {
-                System.out.println(listaNumero.get(i+1));
+                System.out.println(listaNumero.get(i));
+                //System.out.println(listaNumero.get(i+1));  Error por el i+1  en el for... (Se sale del tamaño)
             }
             System.out.println();
     
