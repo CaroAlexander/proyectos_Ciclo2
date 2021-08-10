@@ -58,27 +58,34 @@ public class App {
 
         // Listas de objetos
 
-        int opcion = 1;
-        while (opcion == 1) {
+        String opcion = "S";
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("-- Nueva Lista de Clientes --");
+        System.out.println("");
+        while (opcion.equalsIgnoreCase("S")) {
             System.out.println("Ingrese su cédula:");
-            cedula = scan.nextLine();
+            cedula = scan.next();
+            scan.nextLine();
             System.out.println("Ingrese su nombre");
-            cedula = scan.nextLine();
+            nombre = scan.nextLine();
             System.out.println("Ingrese su ID");
             int id = scan.nextInt();
 
             Cliente nuevoCliente = new Cliente();
             nuevoCliente.setCedula(cedula);
-            nuevoCliente.setNombre(cedula);
+            nuevoCliente.setNombre(nombre);
             nuevoCliente.setId(id);
             pruebaContenedor.agregarCliente(nuevoCliente);
-            System.out.println("Desea agregar otro cliente? (1 /0)");
-            opcion = scan.nextInt();
+            System.out.println("Desea agregar otro cliente? (S / N)");
+            opcion = scan.next();
+            scan.nextLine();
 
         }
         
-        pruebaContenedor.mostrarNombreClientes();
-
+        //pruebaContenedor.mostrarNombreClientes();
+        pruebaContenedor.mostrarDatosClientes();
     }
 
 }

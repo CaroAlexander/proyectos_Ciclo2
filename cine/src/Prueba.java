@@ -1,3 +1,4 @@
+import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,11 +42,25 @@ public class Prueba {
     }
 
     public void mostrarNombreClientes() {
+        System.out.println("-- Listado de Clientes: --");
+        System.out.println("");
         for (int i = 0; i < listaClientes.size(); i ++) {
             System.out.println(listaClientes.get(i).getNombre());
         }
     }
 
+    public void mostrarDatosClientes() {
+        String cadenaClientes = "";
+        System.out.println("\nDatos de los clientes ");
+        for (int i = 0; i < listaClientes.size(); i++) {
+            String datos = "\nCedula: " + listaClientes.get(i).getCedula()
+                            + "\nNombre: " + listaClientes.get(i).getNombre()
+                            + "\nID: " + listaClientes.get(i).getId()
+                            + "\n------------";
+            cadenaClientes = cadenaClientes.concat(datos);
+        }
+        System.out.println(cadenaClientes);
+    }
 
    
 }
