@@ -5,7 +5,7 @@ public class App {
         System.out.println("Bienvenidos al cine");
 
         //Cliente Uno
-/*
+
         Cliente clienteUno = new Cliente();
 
         Scanner scan = new Scanner(System.in);
@@ -45,12 +45,15 @@ public class App {
                             + "\nID: " + clienteDos.getNumeroTarjeta()
                             + "\nPrecio entrada: " + precioDos);
 
-        clienteDos.mostrarDatos();                    
+        clienteDos.mostrarDatos();       
+        
+        System.out.println();
+        System.out.println(" - - Lista de clientes - -");
 
         // clienteDos.saludar();
         //clienteDos.saludar("Buenos dias, con toda! Duro que con Disciplina y Esfuerzo (Trabajo Duro e Inteligente) TODO SE PUEDE!!");
 
-        // Pruebas Contenedores */
+        // Pruebas Contenedores 
 
         Prueba pruebaContenedor = new Prueba ();
         pruebaContenedor.generarLista();
@@ -58,14 +61,14 @@ public class App {
 
         // Listas de objetos
 
-        /*
+        
         String opcion = "S";
 
         System.out.println("");
         System.out.println("");
         System.out.println("-- Nueva Lista de Clientes --");
         System.out.println("");
-        while (opcion.equalsIgnoreCase("S")) {
+        while (opcion.equalsIgnoreCase("S")) { //Ignora mayúsculas y minusculas
             System.out.println("Ingrese su cédula:");
             cedula = scan.next();
             scan.nextLine();
@@ -74,10 +77,15 @@ public class App {
             System.out.println("Ingrese su ID");
             int id = scan.nextInt();
 
+            /*
             Cliente nuevoCliente = new Cliente();
             nuevoCliente.setCedula(cedula);
             nuevoCliente.setNombre(nombre);
             nuevoCliente.setId(id);
+            */
+
+            Cliente nuevoCliente = new Cliente(cedula, nombre, id);
+
             pruebaContenedor.agregarCliente(nuevoCliente);
             System.out.println("Desea agregar otro cliente? (S / N)");
             opcion = scan.next();
@@ -87,7 +95,7 @@ public class App {
         
         //pruebaContenedor.mostrarNombreClientes();
         pruebaContenedor.mostrarDatosClientes();
-        */
+        
 
     }
 

@@ -1,4 +1,3 @@
-import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;

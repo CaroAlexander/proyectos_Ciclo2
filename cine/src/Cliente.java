@@ -2,6 +2,19 @@ public class Cliente extends Persona implements Tiquete {
 
     private int id;
 
+    // Constructor vacio de la clase - el que se pone por defecto
+    public Cliente() {    
+
+    }
+
+    // Constructor sobrecargado
+    public Cliente(String cedula, String nombre, int id){
+
+        this.cedula = cedula ;
+        this.nombre = nombre ;
+        this.id = id;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
