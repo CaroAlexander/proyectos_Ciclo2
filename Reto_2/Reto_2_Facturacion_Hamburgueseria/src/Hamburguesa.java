@@ -1,3 +1,9 @@
+/**
+ * Universidad Tecnologica de Pereira
+ * Misión Tic 2022
+ * Reto 1 Ciclo 2 Grupo 56
+ * Yair Alexander Tobar Caro
+ */
 public class Hamburguesa {
 
     //Constantes

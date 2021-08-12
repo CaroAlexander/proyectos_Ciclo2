@@ -54,7 +54,7 @@ public class Pedido {
     public String mostrarTotales () {
 
         calcularTotales ();
-        String cadenaTotales = "El precio total de los hamburguesas es de "                       + precioTotalHamburguesas 
+        String cadenaTotales = "El precio total de las hamburguesas es de "                       + precioTotalHamburguesas 
                                 + "\nLa suma del precio de las hamburguesas normales es de " 
                                 + precioTotalHamburguesasNormal
                                 + "\nLa suma del precio de las hamburguesas patacón es de " 

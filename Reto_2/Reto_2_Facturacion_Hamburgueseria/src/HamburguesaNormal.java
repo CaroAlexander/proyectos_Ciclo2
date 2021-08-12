@@ -67,6 +67,4 @@ public class HamburguesaNormal extends Hamburguesa {
         return precioHamburguesa;
     }
 
-
-    
 }
