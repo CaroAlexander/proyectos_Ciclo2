@@ -1,0 +1,36 @@
+La información solicitada es la siguiente:
+1. Listar los líderes que actualmente están a cargo de algún proyecto. La información
+relevante es su documento de identidad, nombre, primer apellido y ciudad de
+residencia.
+
+
+SELECT Documento_Identidad, Nombre, Primer_Apellido, Ciudad_Residencia FROM Lider LIMIT 100;
+
+
+2. Listar los materiales importados hasta el momento en todos los proyectos realizados
+en la ciudad de Ibague. La información solicitada es el Nombre material, Precio
+unidad y el ID del proyecto. 
+
+
+SELECT mc.Nombre_Material, mc.Precio_Unidad, p.ID_Proyecto FROM MaterialConstruccion mc JOIN Compra c ON mc.ID_MaterialConstruccion = c.ID_MaterialConstruccion JOIN proyecto P ON c.ID_Proyecto = p.ID_Proyecto WHERE mc.Importado = 'Si' AND p.Ciudad = "Ibague" LIMIT 100;
+
+
+3. Listar cada uno de los proveedores registrados, en donde la información requerida es
+su nombre (Proveedor) y la cantidad de ventas que ha realizado (Ventas). Deben ser
+ordenadas de mayor a menor.
+
+SELECT Proveedor, COUNT(*) AS "Ventas" FROM Compra GROUP BY Proveedor ORDER BY Ventas DESC LIMIT 100;
+
+4. Listar los proyectos cuyo número de habitaciones sea menor a tres, mostrando los
+datos de ID del proyecto, Número de habitaciones y Estrato.
+
+
+SELECT P.ID_Proyecto, p.Numero_Habitaciones, t.Estrato FROM Proyecto p JOIN Tipo t ON p.ID_Tipo = t.ID_Tipo WHERE p.Numero_Habitaciones < 3 LIMIT 100;
+
+
+5. Listar las constructoras cuya suma de los salarios de los líderes de sus proyectos
+superen los 40 millones. La información requerida es el nombre de la Constructora y
+el Costo de líderes (Suma de salarios).
+
+
+
