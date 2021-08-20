@@ -1,0 +1,85 @@
+/*
+    EJEMPLOS DE SENTENCIAS SQL
+*/
+/*Creación de tablas*/
+CREATE TABLE Clientes (
+    identificacion varchar(10) PRIMARY KEY,
+    nombres varchar(20),
+    apellidos varchar(30)
+);
+
+ 
+
+/* Sentencia Insert*/
+ 
+
+/*select*/
+SELECT * FROM Clientes;
+SELECT apellidos FROM Clientes;
+SELECT identificacion, apellidos FROM Clientes;
+
+/*ALTER*/
+ALTER TABLE Clientes ADD edad int;
+ALTER TABLE Clientes DROP COLUMN edad;
+
+/*DROP TABLE*/
+DROP TABLE Marcas;
+TRUNCATE TABLE Marcas;
+
+/*TABLA CON LLAVE FORANEA*/
+CREATE TABLE Productos (
+    codigoBarras varchar(20) PRIMARY KEY,
+    nombre varchar(20),
+    precio float,
+    talla varchar(3),
+    color varchar(15),
+    genero varchar(10),
+    cantidadDisponible int,
+    idMarca int,
+    CONSTRAINT FK_MarcaProducto FOREIGN KEY (idMarca) REFERENCES Marcas(codigoMarca)
+);
+
+/*INSERT*/
+insert into Clientes (identificacion, nombres, apellidos) values ('4850358', 'Daisy', 'Ludwig');
+insert into Clientes (identificacion, nombres, apellidos) values ('8479555', 'Glenna', 'Godridge');
+insert into Clientes (identificacion, nombres, apellidos) values ('0184085', 'Igor', 'Seres');
+insert into Clientes (identificacion, nombres, apellidos) values ('3784528', 'Robers', 'Cleft');
+insert into Clientes (identificacion, nombres, apellidos) values ('4730126', 'Philly', 'Banasik');
+insert into Clientes (identificacion, nombres, apellidos) values ('8478445', 'Samara', 'Henstridge');
+insert into Clientes (identificacion, nombres, apellidos) values ('6175348', 'Neron', 'Kissick');
+insert into Clientes (identificacion, nombres, apellidos) values ('0997394', 'Stanley', 'Tortoishell');
+insert into Clientes (identificacion, nombres, apellidos) values ('9450551', 'June', 'Hellen');
+insert into Clientes (identificacion, nombres, apellidos) values ('4914243', 'Andrea', 'Becconsall');
+
+INSERT INTO Productos (codigoBarras,nombre,precio,talla,color,genero,cantidadDisponible,idMarca) VALUES
+	 ('1111','pantalon',12000.0,'S','Azul','Masculino',10,3),
+	 ('2222','pantalon',15000.0,'M','Negro','Femenino',6,2),
+	 ('3333','camisa',30000.0,'S','Blanco','Masculino',9,1);
+
+
+/*ALIAS*/
+SELECT identificacion AS "Cédula", nombres AS "Nombre de la persona" FROM Clientes;
+SELECT identificacion, nombres || " " || apellidos AS "Nombre completo" FROM Clientes;
+
+/*SELECT SIN REPETIDOS*/
+SELECT DISTINCT nombres FROM Clientes;
+
+/*SELECT WHERE*/
+SELECT * FROM Clientes WHERE identificacion = "1014275660";
+SELECT * FROM Clientes WHERE nombres = 'Yair';
+SELECT * FROM Clientes WHERE nombres = 'Yair' AND identificacion = "6175348";
+
+/*LIKE*/
+SELECT * FROM Clientes WHERE nombres LIKE "%Yair%";
+/*not*/
+SELECT * FROM Clientes WHERE nombres NOT LIKE "%Yair%";
+/*order*/
+SELECT * FROM Clientes ORDER BY apellidos;
+SELECT * FROM Clientes ORDER BY apellidos, nombres;
+SELECT * FROM Clientes ORDER BY apellidos DESC; 
+SELECT * FROM Clientes ORDER BY apellidos ASC;
+
+/*COUNT*/
+SELECT COUNT(*) FROM Clientes;
+SELECT COUNT(*) AS "NUMERO DE CLIENTES" FROM Clientes;
+SELECT COUNT(*) AS "NUMERO DE Yair's" FROM Clientes WHERE nombres LIKE "%Yair%";
