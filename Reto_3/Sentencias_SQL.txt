@@ -33,4 +33,4 @@ superen los 40 millones. La información requerida es el nombre de la Constructo
 el Costo de líderes (Suma de salarios).
 
 
-
+SELECT p.Constructora, SUM(l.salario) AS "Costo de líderes" FROM Proyecto p JOIN Lider l ON p.ID_Lider = l.ID_Lider GROUP BY p.Constructora HAVING "Costo de líderes" > 40000000 LIMIT 100;
